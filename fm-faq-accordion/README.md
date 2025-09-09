@@ -21,7 +21,7 @@ A responsive FAQ accordion card where users can expand/collapse questions. It su
 
 ### Screenshot
 
-![Mobile screenshots](./scrennshot-mobile.png)
+![Mobile screenshots](./screenshot-mobile.png)
 ![Desktop screenshots](./screenshot-desktop.png)
 
 ### Links
