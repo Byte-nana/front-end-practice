@@ -27,7 +27,7 @@ A responsive FAQ accordion card where users can expand/collapse questions. It su
 ### Links
 
 - Solution URL: [repo url](https://github.com/Byte-nana/front-end-practice/tree/main/fm-faq-accordion)
-- Live Site URL: [live site url](https://your-live-site-url.com)
+- Live Site URL: [live site url](https://byte-nana.github.io/front-end-practice/fm-faq-accordion/)
 
 ## My process
 
