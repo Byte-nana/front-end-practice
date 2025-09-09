@@ -1,6 +1,6 @@
 # Frontend Mentor - FAQ accordion solution
 
-This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-wyfFdeBwBz). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-wyfFdeBwBz).
 
 ## Table of contents
 
@@ -21,14 +21,13 @@ A responsive FAQ accordion card where users can expand/collapse questions. It su
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-_Add a screenshot of your final solution here._
+![Mobile screenshots](./scrennshot-mobile.png)
+![Desktop screenshots](./screenshot-desktop.png)
 
 ### Links
 
-- Solution URL: [https://your-repo-url.com](https://your-repo-url.com)
-- Live Site URL: [https://your-live-site-url.com](https://your-live-site-url.com)
+- Solution URL: [repo url](https://github.com/Byte-nana/front-end-practice/tree/main/fm-faq-accordion)
+- Live Site URL: [live site url](https://your-live-site-url.com)
 
 ## My process
 
@@ -44,12 +43,14 @@ _Add a screenshot of your final solution here._
 ### What I learned
 
 #### HTML
-- Learned about **SVGs** and how to embed them as inline images or reference them in HTML.  
+
+- Learned about **SVGs** and how to embed them as inline images or reference them in HTML.
 - Understood how to manage `alt` text for better accessibility when using icons.
 
 #### CSS
-- Used the `clamp()` function and **linear interpolation** to create a smooth background height change from 232px (mobile) to 320px (desktop).  
-- Still practicing how to choose the **right breakpoints** for responsive design.  
+
+- Used the `clamp()` function and **linear interpolation** to create a smooth background height change from 232px (mobile) to 320px (desktop).
+- Still practicing how to choose the **right breakpoints** for responsive design.
 
 ```css
 --bg-height: clamp(232px, calc(232px + 0.0846 * (100vw - 400px)), 320px);
@@ -58,9 +59,10 @@ _Add a screenshot of your final solution here._
 - Applied hover states for desktop with `:hover`, and styled active states for touch devices separately.
 
 #### JavaScript
-- Learned how to use **`dataset` attributes** to link titles, buttons, and answers.  
-- Practiced **event delegation** by attaching a single listener to the parent `<ul>`.  
-- Tried to **refactor** functions for cleaner, more modular code.  
+
+- Learned how to use **`dataset` attributes** to link titles, buttons, and answers.
+- Practiced **event delegation** by attaching a single listener to the parent `<ul>`.
+- Tried to **refactor** functions for cleaner, more modular code.
 - Discovered how to implement a **mobile touch effect**: since CSS alone didn’t work, I added a `touchstart` event in JS to change the title color when active.
 
 ```js
@@ -77,22 +79,12 @@ This ensures that when a question is activated on mobile, the title changes colo
 
 ### Continued development
 
-- Get more confident with **responsive breakpoints** and choosing the right ranges.  
-- Improve my understanding of **SVG handling** in CSS (scaling, coloring).  
-- Keep refining **JavaScript structure** for cleaner, more reusable code.  
+- Get more confident with **responsive breakpoints** and choosing the right ranges.
+- Improve my understanding of **SVG handling** in CSS (scaling, coloring).
+- Keep refining **JavaScript structure** for cleaner, more reusable code.
 - Explore accessibility improvements, such as adding keyboard support for toggling questions.
-
-### Useful resources
-
-- [MDN: Using data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) – Helped me understand how to work with `dataset`.  
-- [CSS Tricks: clamp()](https://css-tricks.com/using-clamp-to-create-fluid-responsive-designs/) – Explained how to use `clamp()` for responsive sizing.  
-- [CSS Tricks: Hover on Touch Devices](https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/) – Useful for handling hover vs. touch states.  
 
 ## Author
 
-- GitHub – [Byte-nana](https://github.com/Byte-nana)  
-- Frontend Mentor – [@yourusername](https://www.frontendmentor.io/profile/yourusername)  
-
-## Acknowledgments
-
-Thanks to Frontend Mentor for providing this challenge and the community resources that helped me along the way.
+- GitHub – [Byte-nana](https://github.com/Byte-nana)
+- Frontend Mentor – [@yourusername](https://www.frontendmentor.io/profile/yourusername)

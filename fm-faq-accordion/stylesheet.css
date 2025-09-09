@@ -123,13 +123,13 @@ ul {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
-/*  */
+/* desktop hover */
 @media (hover: hover) and (pointer: fine) {
   .item__title:hover {
     color: var(--accent-colour);
   }
 }
-
+/* media query */
 @media screen and (min-width: 400px) {
   body::before {
     background: url(./assets/images/background-pattern-desktop.svg) center /
