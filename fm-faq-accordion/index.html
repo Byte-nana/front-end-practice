@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <!-- Linking CSS -->
+    <link rel="stylesheet" href="./stylesheet.css" />
+    <!-- Linking JS -->
+    <script src="./main.js" defer></script>
+    <title>Frontend Mentor | FAQ accordion</title>
+  </head>
+  <body>
+    <section class="faq__container">
+      <header class="faq__header">
+        <img
+          class="faq__logo"
+          src="./assets/images/icon-star.svg"
+          alt="star icon"
+        />
+        <h1 class="faq__title">FAQs</h1>
+      </header>
+
+      <ul class="faq__list">
+        <li class="faq__item">
+          <div class="item__titleWrapper">
+            <h3 class="item__title" data-id="0">
+              What is Frontend Mentor, and how will it help me?
+            </h3>
+            <button class="item__btn" type="button">
+              <img
+                class="btnImg"
+                src="./assets/images/icon-plus.svg"
+                alt="plus button"
+                data-id="0"
+              />
+            </button>
+          </div>
+
+          <p class="item__content" data-id="0">
+            Frontend Mentor offers realistic coding challenges to help
+            developers improve their frontend coding skills with projects in
+            HTML, CSS, and JavaScript. It's suitable for all levels and ideal
+            for portfolio building.
+          </p>
+        </li>
+
+        <li class="faq__item">
+          <div class="item__titleWrapper">
+            <h3 class="item__title" data-id="1">Is Frontend Mentor free?</h3>
+            <button class="item__btn" type="button">
+              <img
+                class="btnImg"
+                src="./assets/images/icon-plus.svg"
+                alt="plus button"
+                data-id="1"
+              />
+            </button>
+          </div>
+          <p class="item__content" data-id="1">
+            Yes, Frontend Mentor offers both free and premium coding challenges,
+            with the free option providing access to a range of projects
+            suitable for all skill levels.
+          </p>
+        </li>
+
+        <li class="faq__item">
+          <div class="item__titleWrapper">
+            <h3 class="item__title" data-id="2">
+              Can I use Frontend Mentor projects in my portfolio?
+            </h3>
+            <button class="item__btn" type="button">
+              <img
+                class="btnImg"
+                src="./assets/images/icon-plus.svg"
+                alt="plus button"
+                data-id="2"
+              />
+            </button>
+          </div>
+          <p class="item__content" data-id="2">
+            Yes, you can use projects completed on Frontend Mentor in your
+            portfolio. It's an excellent way to showcase your skills to
+            potential employers!
+          </p>
+        </li>
+
+        <li class="faq__item">
+          <div class="item__titleWrapper">
+            <h3 class="item__title" data-id="3">
+              How can I get help if I'm stuck on a Frontend Mentor challenge?
+            </h3>
+            <button class="item__btn" type="button">
+              <img
+                class="btnImg"
+                src="./assets/images/icon-plus.svg"
+                alt="plus button"
+                data-id="3"
+              />
+            </button>
+          </div>
+          <p class="item__content" data-id="3">
+            The best place to get help is inside Frontend Mentor's Discord
+            community. There's a help channel where you can ask questions and
+            seek support from other community members.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/Byte-nana">Byte-nana</a>.
+    </div>
+  </body>
+</html>
