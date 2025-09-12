@@ -1,0 +1,154 @@
+/* Linking google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* primary colours */
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --sark-gray-blue: hsl(224, 30%, 27%);
+  /* accent colours */
+  --light-red: hsl(0, 100%, 67%);
+  --orangey-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+  /* gradients */
+  --bg-gradient: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  --circle-gradient: linear-gradient(
+    hsla(256, 72%, 46%, 1),
+    hsla(241, 72%, 46%, 0)
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Hanken Grotesk', sans-serif;
+}
+body {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+ul {
+  list-style: none;
+}
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+/* result */
+.result {
+  padding: 1.5rem 3rem 2.5rem;
+  background: var(--bg-gradient);
+  color: var(--pale-blue);
+  border-radius: 0 0 32px 32px;
+  text-align: center;
+}
+.result__title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--light-lavender);
+}
+.result__score {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  background: var(--circle-gradient);
+  border-radius: 50%;
+}
+.result__score :first-child {
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+.result__score :last-child {
+  font-size: 1rem;
+  color: var(--light-lavender);
+}
+.result__evaluation {
+  font-size: 1.5rem;
+}
+.result__content {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--light-lavender);
+}
+/* summary */
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  color: var(--sark-gray-blue);
+}
+.summary__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.summary__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.list__item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 12px;
+}
+.list__item:first-child {
+  color: var(--light-red);
+  background-color: hsl(0, 100%, 98%);
+}
+.list__item:nth-child(2) {
+  color: var(--orangey-yellow);
+  background-color: hsl(39, 100%, 98%);
+}
+.list__item:nth-child(3) {
+  color: var(--green-teal);
+  background-color: hsl(166, 100%, 98%);
+}
+.list__item:last-child {
+  color: var(--cobalt-blue);
+  background-color: hsl(234, 85%, 98%);
+}
+.title__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.list__score {
+  color: var(--sark-gray-blue);
+  font-weight: 700;
+}
+.list__total-score {
+  color: var(--light-lavender);
+  font-weight: 700;
+}
+.summary__btn {
+  width: 100%;
+  padding: 1.125rem;
+  background-color: var(--sark-gray-blue);
+  border-radius: 32px;
+  font-size: 1.125rem;
+  color: var(--pale-blue);
+}
+/*  */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
