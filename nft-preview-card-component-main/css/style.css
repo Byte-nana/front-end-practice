@@ -2,6 +2,7 @@
   --color-bg: var(--color-blue-950);
   --color-bg-variant: var(--color-blue-900);
   --color-accent: var(--color-cyan);
+  --color-accent-rgb: 0, 255, 255;
   --color-line: var(--color-blue-800);
   --color-text: var(--color-blue-500);
   --color-text-accent: var(--color-white);
@@ -35,10 +36,29 @@ body {
   background-color: var(--color-bg-variant);
   border-radius: 1rem;
 }
+.card__img-wrapper {
+  position: relative;
+}
 .card__main-img {
   display: block;
   width: 100%;
   border-radius: 14px;
+}
+/* To do: active effect */
+.img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  background-color: rgb(var(--color-accent-rgb), 0.4);
+}
+.img-overlay img {
+  opacity: 1;
 }
 .card__describe {
   margin-top: 1.5rem;
