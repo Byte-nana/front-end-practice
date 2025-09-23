@@ -1,0 +1,30 @@
+:root {
+  --color-bg: var(--color-blue-950);
+  --color-bg-variant: var(--color-blue-900);
+  --color-accent: var(--color-cyan);
+  --color-line: var(--color-blue-800);
+  --color-text: var(--color-blue-500);
+  --color-text-accent: var(--color-white);
+
+  --color-blue-500: hsl(215, 51%, 70%);
+  --color-blue-950: hsl(217, 54%, 11%);
+  --color-blue-900: hsl(216, 50%, 16%);
+  --color-blue-800: hsl(215, 32%, 27%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-cyan: hsl(178, 100%, 50%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+  box-sizing: border-box;
+}
+
+/*  */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
