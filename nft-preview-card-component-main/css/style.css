@@ -44,7 +44,6 @@ body {
   width: 100%;
   border-radius: 14px;
 }
-/* To do: active effect */
 .img-overlay {
   position: absolute;
   top: 0;
@@ -56,6 +55,12 @@ body {
   height: 100%;
   border-radius: 14px;
   background-color: rgb(var(--color-accent-rgb), 0.4);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+}
+.img-overlay:active {
+  opacity: 1;
 }
 .img-overlay img {
   opacity: 1;
@@ -75,6 +80,11 @@ body {
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--color-text-accent);
+  cursor: pointer;
+  transition: color 300ms ease-in;
+}
+.describe__title:active {
+  color: var(--color-accent);
 }
 .describe__content {
   margin: 1rem 0;
@@ -114,6 +124,11 @@ body {
 }
 .profile__name {
   color: var(--color-text-accent);
+  cursor: pointer;
+  transition: color 300ms ease-in;
+}
+.profile__name:active {
+  color: var(--color-accent);
 }
 /*  */
 .attribution {
@@ -123,4 +138,22 @@ body {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+/* hover */
+@media (hover: hover) and (pointer: fine) {
+  .img-overlay:hover {
+    opacity: 1;
+  }
+  .describe__title:hover {
+    color: var(--color-accent);
+  }
+  .profile__name:hover {
+    color: var(--color-accent);
+  }
+}
+/* media */
+@media screen and (min-width: 574px) {
+  .card {
+    width: 350px;
+  }
 }
