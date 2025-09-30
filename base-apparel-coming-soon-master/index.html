@@ -42,17 +42,17 @@
         Add your email below to stay up-to-date with announcements and our
         launch deals.
       </p>
-      <label class="label__email" for="input__email">
-        <input
-          id="input__email"
-          type="email"
-          placeholder="Email Address"
-          required
+      <form action="#" class="form__email" novalidate>
+        <input id="input__email" type="email" placeholder="Email Address" />
+        <img
+          class="form__error-icon"
+          src="./images/icon-error.svg"
+          alt="error icon"
         />
-        <button class="btn">
-          <img src="./images/icon-arrow.svg" alt="" />
+        <button type="submit" class="btn">
+          <img src="./images/icon-arrow.svg" alt="arrow" />
         </button>
-      </label>
+      </form>
     </main>
     <footer>
       <p class="attribution">

@@ -27,6 +27,9 @@ body {
   font-size: 1rem;
 }
 /* header */
+.header {
+  width: 100%;
+}
 .logo {
   width: 30%;
   text-align: left;
@@ -60,14 +63,17 @@ body {
   line-height: 1.5;
   font-weight: 300;
 }
-.label__email {
-  display: inline-flex;
+.form__email {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 3rem;
   border: 1px solid var(--color-pink);
   border-radius: 2rem;
+}
+.form__error {
+  border: 2px solid var(--color-red);
 }
 #input__email {
   width: 100%;
@@ -84,6 +90,10 @@ body {
   font-size: 1rem;
   font-weight: 300;
 }
+.form__error-icon {
+  display: none;
+  margin-right: 1rem;
+}
 .btn {
   display: flex;
   justify-content: center;
@@ -98,7 +108,12 @@ body {
   cursor: pointer;
   box-shadow: 0 0px 20px var(--color-pink);
 }
-
+.error__message {
+  margin: 1rem 2rem;
+  font-size: 0.875rem;
+  color: var(--color-red);
+  text-align: left;
+}
 /*  */
 .attribution {
   font-size: 11px;
