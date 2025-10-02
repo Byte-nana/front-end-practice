@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
     <link
       rel="icon"
       type="image/png"
@@ -11,9 +12,9 @@
     />
     <!-- SEO -->
     <title>Frontend Mentor | Base Apparel coming soon page</title>
-    <meta name="description" content="coming soon registration" />
-    <meta name="author" content="Byte-nana" />
-    <meta name="keywords" content="HTML, SEO, front-end mentor" />
+    <meta name="description" content="coming soon registration card" />
+    <meta name="authour" content="Byte-nana" />
+    <meta name="keywords" content="HTML, CSS, JS, SEO, front-end mentor" />
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,12 +25,19 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <!-- JS -->
-    <script src="./src/main.js" defer></script>
+    <script type="module" src="./src/main.js" defer></script>
   </head>
   <body>
     <header class="header">
       <img class="logo" src="./images/logo.svg" alt="brand logo" />
-      <img class="hero" src="./images/hero-mobile.jpg" alt="a women" />
+      <picture class="hero">
+        <source
+          type="image/jpg"
+          srcset="./images/hero-desktop.jpg"
+          media="(width >=768px)"
+        />
+        <img src="./images/hero-mobile.jpg" alt="a women" />
+      </picture>
     </header>
     <main class="main">
       <h1 class="title">
@@ -42,6 +50,7 @@
         Add your email below to stay up-to-date with announcements and our
         launch deals.
       </p>
+      <!-- Todo: store form data to json file -->
       <form action="#" class="form__email" novalidate>
         <input id="input__email" type="email" placeholder="Email Address" />
         <img
@@ -54,12 +63,12 @@
         </button>
       </form>
     </main>
-    <footer>
+    <footer class="footer">
       <p class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by <a href="https://github.com/Byte-nana/">Byte-nana</a>.
       </p>
     </footer>
   </body>
