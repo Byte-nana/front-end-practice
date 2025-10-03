@@ -23,8 +23,8 @@ A responsive product preview card featuring a hero image, title, description, pr
 
 ### Links
 
-- Solution URL: [Github repo](https://github.com/Byte-nana/front-end-practice/tree/main/product-preivew-card-component-main)
-- Live Site URL: [Github page](https://byte-nana.github.io/front-end-practice/product-preivew-card-component-main)
+- Solution URL: [Github repo](https://github.com/Byte-nana/front-end-practice/tree/main/product-preview-card-component-main)
+- Live Site URL: [Github page](https://byte-nana.github.io/front-end-practice/product-preview-card-component-main)
 
 ## My process
 
