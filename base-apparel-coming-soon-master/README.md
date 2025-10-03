@@ -24,8 +24,8 @@ A responsive landing page for Base Apparel with a hero image, branding, descript
 
 ### Links
 
-- Solution URL: [https://your-repo-url.com](https://your-repo-url.com)
-- Live Site URL: [https://your-live-site-url.com](https://your-live-site-url.com)
+- Solution URL: [Github repo](https://github.com/Byte-nana/front-end-practice/tree/main/base-apparel-coming-soon-master)
+- Live Site URL: [https://your-live-site-url.com](https://byte-nana.github.io/front-end-practice/base-apparel-coming-soon-master)
 
 ## My process
 
