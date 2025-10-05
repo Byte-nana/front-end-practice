@@ -42,11 +42,12 @@ body {
 /*  */
 .card {
   position: relative;
-  width: 85%;
+  width: min(85%, 350px);
   margin-block: 4rem;
   border-radius: 8px;
   background: var(--color-white);
   overflow: hidden;
+  box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38);
 }
 .hero {
   display: block;
@@ -55,7 +56,7 @@ body {
   object-fit: cover;
 }
 .card__main {
-  margin: 2.5rem 2rem 1.3rem;
+  margin: 2.5rem 2rem 1.2rem;
   color: var(--color-text-main);
   font-size: 13px;
   font-weight: 500;
@@ -63,14 +64,14 @@ body {
 }
 .main__title {
   font-size: 1rem;
+  margin-bottom: 1rem;
 }
-.main__content {
-  margin: 1rem 0 2rem;
-}
+
 .main__profile {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 2rem;
 }
 .profile__wrapper {
   display: flex;
@@ -88,25 +89,26 @@ body {
 .profile__btn {
   background: var(--color-light-grayish-blue);
   color: var(--color-text-main);
+  z-index: 10;
+}
+.profile__btn.active {
+  background: var(--color-dark-blue);
+  color: var(--color-light-grayish-blue);
 }
 .share-box {
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: calc(2.2rem + 47px);
   display: none;
-  justify-content: space-between;
   align-items: center;
+  gap: 1.5rem;
   padding: 1rem 2rem;
   background: var(--color-dark-grayish-blue);
   border-radius: 0 0 8px 8px;
 }
 .share-box.open {
   display: flex;
-}
-.share__wrapper {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
 }
 .share__text {
   text-transform: uppercase;
@@ -115,14 +117,10 @@ body {
   font-size: 13px;
   font-weight: 500;
 }
-.share__btn {
-  background: var(--color-dark-blue);
-  color: var(--color-light-grayish-blue);
-}
 .share__links {
   display: flex;
-  gap: 0.8rem;
-  font-size: 1.3rem;
+  gap: 1rem;
+  font-size: 1.5rem;
   list-style: none;
 }
 .link a {
@@ -134,4 +132,38 @@ body {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+@media screen and (min-width: 1024px) {
+  .card {
+    display: flex;
+    width: min(80%, 850px);
+  }
+  .card__header {
+    width: 40%;
+  }
+  .hero {
+    height: clamp(180px, 50vw, 350px);
+    object-position: left;
+  }
+  .card__main {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding-inline: 2.5rem;
+    font-size: 1rem;
+  }
+  .main__title {
+    font-size: 1.3rem;
+  }
+  .share-box {
+  }
+  /* .share-box::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: var(--color-white);
+  } */
 }
