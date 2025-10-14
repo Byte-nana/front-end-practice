@@ -37,9 +37,12 @@ button {
 }
 .cards {
   width: 85%;
+  max-width: 400px;
   margin-top: 4rem;
   border-radius: 8px;
   overflow: hidden;
+  container-type: inline-size;
+  container-name: preview;
 }
 .card {
   padding: 3rem 2.5rem;
@@ -105,5 +108,43 @@ button {
     border: 2px solid var(--color-main);
     background-color: transparent;
     color: var(--color-secondary);
+  }
+}
+/* container query */
+@container preview (min-width: 380px) {
+  .card {
+    padding-block: 4rem;
+  }
+  .card__title {
+    font-size: 2.5rem;
+    margin-block: 2.5rem;
+  }
+  .card__content {
+    font-size: 1.2rem;
+  }
+  .card__btn {
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+}
+/* media query */
+@media screen and (min-width: 1024px) {
+  .cards {
+    display: flex;
+    max-width: 1000px;
+  }
+  .card {
+    padding-block: 3rem;
+  }
+  .card__title {
+    font-size: 2rem;
+    margin-block: 2rem;
+  }
+  .card__content {
+    font-size: 15px;
+  }
+  .card__btn {
+    margin-top: 5rem;
+    font-size: 15px;
   }
 }
