@@ -2,7 +2,90 @@
   font-family: "Lexend Deca", sans-serif;
 font-family: "Big Shoulders", sans-serif;
  */
+/* 🤨 how to shrink the letter, it looks like it's super slim
+🤨 how to control text-line?
+*/
+:root {
+  --color-main: var(--gray-100);
+  --color-secondary: var(--transparent-white);
+
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --gray-100: hsl(0, 0%, 95%);
+  --Gold-500: hsl(31, 77%, 52%);
+  --Cyan-800: hsl(184, 100%, 22%);
+  --Green-950: hsl(179, 100%, 13%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lexend Deca', sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-main);
+}
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.cards {
+  width: 85%;
+  margin-top: 4rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.card {
+  padding: 3rem 2.5rem;
+  padding-right: 4rem;
+}
+.card__title {
+  text-transform: uppercase;
+  color: var(--color-main);
+  font-size: 2rem;
+  margin-block: 2rem;
+}
+.card__content {
+  color: var(--color-secondary);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.card__btn {
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--color-main);
+  border-radius: 2rem;
+  font-size: 15px;
+}
+.sedans {
+  background-color: var(--Gold-500);
+}
+.sedans__btn {
+  color: var(--Gold-500);
+}
+.suvs {
+  background-color: var(--Cyan-800);
+}
+.suvs__btn {
+  color: var(--Cyan-800);
+}
+.luxury {
+  background-color: var(--Green-950);
+}
+.luxury__btn {
+  color: var(--Green-950);
+}
+
+/*  */
 .attribution {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
   font-size: 11px;
   text-align: center;
 }
