@@ -1,4 +1,7 @@
+/* To do
+1. box shadow */
 :root {
+  --bg-main: var(--Blue-100);
   --text-primary: var(--Blue-950);
   --text-secondary: var(--Gray-600);
 
@@ -20,8 +23,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--Blue-100);
+  background-color: var(--bg-main);
   font-size: 1rem;
+  background-image: url('/images/pattern-background-mobile.svg');
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
 }
 /* common */
 button {
