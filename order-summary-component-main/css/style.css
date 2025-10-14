@@ -5,6 +5,8 @@
   --text-primary: var(--Blue-950);
   --text-secondary: var(--Gray-600);
 
+  --animation-colour: hsl(245, 75%, 65%);
+
   --Blue-50: hsl(225, 100%, 98%);
   --Blue-100: hsl(225, 100%, 94%);
   --Gray-600: hsl(224, 23%, 55%);
@@ -23,6 +25,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-block: 2rem;
   background-color: var(--bg-main);
   font-size: 1rem;
   background-image: url('/images/pattern-background-mobile.svg');
@@ -102,6 +105,10 @@ button {
   font-size: 0.8rem;
   font-weight: 600;
 }
+.order__link:active {
+  text-decoration: none;
+  color: var(--animation-colour);
+}
 .main__btns {
   display: flex;
   flex-direction: column;
@@ -115,12 +122,18 @@ button {
   border-radius: 12px;
   font-weight: 700;
 }
+.main__btns :first-child:active {
+  background-color: var(--animation-colour);
+}
 .main__btns :nth-child(2) {
   padding-top: 1rem;
   background-color: #fff;
   color: var(--text-secondary);
   border-radius: 12px;
   font-weight: 700;
+}
+.main__btns :nth-child(2):active {
+  color: var(--text-primary);
 }
 /* footer */
 
@@ -135,7 +148,19 @@ button {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
-
+/* hover */
+@media (hover: hover) {
+  .order__link:hover {
+    text-decoration: none;
+    color: var(--animation-colour);
+  }
+  .main__btns :first-child:hover {
+    background-color: var(--animation-colour);
+  }
+  .main__btns :nth-child(2):hover {
+    color: var(--text-primary);
+  }
+}
 @media screen and (min-width: 1024px) {
   body {
     background-image: url('/images/pattern-background-desktop.svg');
