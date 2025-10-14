@@ -1,3 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Red Hat Display', sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(225, 100%, 94%);
+}
+/* common */
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+/* section */
+.card {
+  width: 80%;
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+/* header */
+.card__header {
+  width: 100%;
+}
+.header__hero {
+  width: 100%;
+}
 /* footer */
 .attribution {
   font-size: 11px;
