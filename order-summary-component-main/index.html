@@ -34,32 +34,42 @@
           alt="women listening music while dancing"
         />
       </header>
-      <main>
-        <h1>Order Summary</h1>
-        <p>
+      <main class="card__main">
+        <h1 class="main__title">Order Summary</h1>
+        <p class="main__content">
           You can now listen to millions of songs, audiobooks, and podcasts on
           any device anywhere you like!
         </p>
-        <article>
-          <div>
-            <img src="./images/icon-music.svg" alt="music icon" />
-            <div>
-              <p>Annual Plan</p>
-              <p>$59.99/year</p>
+        <article class="main__order">
+          <div class="order__wrapper">
+            <img
+              class="order__img"
+              src="./images/icon-music.svg"
+              alt="music icon"
+            />
+            <div class="order__text-wrapper">
+              <p class="order__name">Annual Plan</p>
+              <p class="order__price">$59.99/year</p>
             </div>
           </div>
-          <a href="#"> Change</a>
+          <a class="order__link" href="#">Change</a>
         </article>
-        <button>Proceed to Payment</button>
-        <button>Cancel Order</button>
+        <div class="main__btns">
+          <button>Proceed to Payment</button>
+          <button>Cancel Order</button>
+        </div>
       </main>
     </section>
-    <footer>
-      <div class="attribution">
+    <footer class="attribution">
+      <div>
         Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          Frontend Mentor</a
+        >.
+      </div>
+      <div>
+        Coded by
+        <a href="https://github.com/Byte-nana" target="_blank"> Byte-nana </a>.
       </div>
     </footer>
   </body>
