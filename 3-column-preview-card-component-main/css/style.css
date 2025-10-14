@@ -58,10 +58,17 @@ button {
 }
 .card__btn {
   margin-top: 1.5rem;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   background-color: var(--color-main);
+  border: 2px solid transparent;
   border-radius: 2rem;
   font-size: 15px;
+  transition: all 250ms ease;
+}
+.card__btn:active {
+  border: 2px solid var(--color-main);
+  background-color: transparent;
+  color: var(--color-secondary);
 }
 .sedans {
   background-color: var(--Gold-500);
@@ -91,4 +98,12 @@ button {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+/* hover */
+@media (hover: hover) {
+  .card__btn:hover {
+    border: 2px solid var(--color-main);
+    background-color: transparent;
+    color: var(--color-secondary);
+  }
 }
