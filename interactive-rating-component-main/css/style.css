@@ -25,7 +25,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: calc(var(--base-space) * 3);
   background-color: var(--grey-950);
+  cursor: default;
 }
 ul {
   list-style: none;
@@ -46,7 +48,7 @@ button {
   color: var(--grey-500);
   line-height: 1.5;
 }
-/*  */
+/*Rating card */
 .rating {
   width: 90%;
   max-width: 400px;
@@ -71,16 +73,12 @@ button {
 .rating__title {
   margin-block: calc(var(--base-space) * 2);
 }
-.rating__content {
-  color: var(--grey-500);
-  line-height: 1.5;
-}
 .rating__list {
   display: flex;
   justify-content: space-between;
   margin-block: calc(var(--base-space) * 3);
 }
-.rating__list li {
+.list__btn {
   width: 48px;
   height: 48px;
   display: flex;
@@ -90,14 +88,13 @@ button {
   border-radius: 50%;
   color: var(--grey-500);
   font-weight: 700;
-  cursor: pointer;
   transition: all var(--animation-duration) ease;
 }
-.rating__list li:active {
+.list__btn:active {
   background-color: var(--orange-500);
   color: var(--grey-950);
 }
-.rating__list li.rating--clicked {
+.list__btn.btn--clicked {
   background-color: var(--white);
   color: var(--grey-950);
 }
@@ -149,7 +146,7 @@ button {
   color: hsl(228, 45%, 44%);
 }
 @media (hover: hover) {
-  .rating__list li:hover {
+  .list__btn:hover {
     background-color: var(--orange-500);
     color: var(--grey-950);
   }
