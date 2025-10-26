@@ -9,6 +9,9 @@
 
   /* Size */
   --base-space: 0.5rem;
+
+  /* animation */
+  --animation-duration: 300ms;
 }
 * {
   margin: 0;
@@ -70,15 +73,25 @@ button {
   margin-block: calc(var(--base-space) * 3);
 }
 .rating__list li {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--bg-rating);
   border-radius: 50%;
   color: var(--grey-500);
-  font-weight: 400;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--animation-duration) ease;
+}
+.rating__list li:active {
+  background-color: var(--orange-500);
+  color: var(--grey-950);
+}
+.rating__list li.rating--clicked {
+  background-color: var(--white);
+  color: var(--grey-950);
 }
 .rating__btn {
   width: 100%;
@@ -90,6 +103,11 @@ button {
   text-transform: uppercase;
   background-color: var(--orange-500);
   font-weight: 700;
+  letter-spacing: 2px;
+  transition: all var(--animation-duration) ease;
+}
+.rating__btn:active {
+  background-color: var(--white);
 }
 .attribution {
   font-size: 11px;
@@ -97,4 +115,13 @@ button {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+@media (hover: hover) {
+  .rating__list li:hover {
+    background-color: var(--orange-500);
+    color: var(--grey-950);
+  }
+  .rating__btn:hover {
+    background-color: var(--white);
+  }
 }
