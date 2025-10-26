@@ -98,7 +98,7 @@ button {
   background-color: var(--white);
   color: var(--grey-950);
 }
-.rating__btn {
+.submit__btn {
   width: 100%;
   display: block;
   padding-block: calc(var(--base-space) * 2);
@@ -111,7 +111,7 @@ button {
   letter-spacing: 2px;
   transition: all var(--animation-duration) ease;
 }
-.rating__btn:active {
+.submit__btn:active {
   background-color: var(--white);
 }
 /* Thank you card */
@@ -150,7 +150,7 @@ button {
     background-color: var(--orange-500);
     color: var(--grey-950);
   }
-  .rating__btn:hover {
+  .submit__btn:hover {
     background-color: var(--white);
   }
 }

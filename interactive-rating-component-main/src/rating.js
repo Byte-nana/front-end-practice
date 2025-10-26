@@ -1,8 +1,6 @@
 'use strict';
 
-//Give click state to the scoring buttons
-//get elements of buttons
-//give --clicked class when user clicked the buttons
+//Give clicked status to the scoring buttons
 
 const ratingBtns = document.querySelector('.rating__list');
 
