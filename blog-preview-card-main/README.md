@@ -57,3 +57,17 @@ I used CSS custom properties (`:root` variables) to keep the design consistent a
     border-radius: calc(var(--size-border) * 2.5);
   }
   ```
+
+- Refined understanding of hover vs. touch interaction using conditional media queries.
+
+-Improved layout control using gap, calc(), and consistent unit scaling.
+
+-Focused on using shadow and border radius combinations for depth and hierarchy.
+
+## Author
+
+👋 Developed by [Byte-nana](https://github.com/Byte-nana)  
+Front-End Developer | HTML • CSS • JS • UI/UX
+
+- GitHub – [Byte-nana](https://github.com/Byte-nana)
+- Frontend Mentor – [@Byte-nana](https://www.frontendmentor.io/profile/Byte-nana)
