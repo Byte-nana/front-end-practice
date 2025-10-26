@@ -14,7 +14,6 @@ It’s part of my **Front-End Practice Series**, where I recreate professional l
   - [Folder structure](#folder-structure)
   - [Links](#links)
 - [Tech stack](#tech-stack)
-- [Architecture](#architecture)
 - [My process](#my-process)
   - [Main functions & interactions](#main-functions--interactions)
   - [What I learned](#what-i-learned)
