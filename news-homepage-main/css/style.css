@@ -12,6 +12,12 @@
   --grayish-blue: hsl(233, 8%, 79%);
   --dark-grayish-blue: hsl(236, 13%, 42%);
   --very-dark-blue: hsl(240, 100%, 5%);
+
+  /* Size */
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
 }
 
 * {
@@ -22,7 +28,7 @@
 }
 
 body {
-  padding: 2rem 1.5rem;
+  padding: var(--space-lg) var(--space-md);
 }
 button {
   border: none;
@@ -55,14 +61,17 @@ p {
 }
 /* Common */
 .section {
-  margin-bottom: 3rem;
+  margin-bottom: var(--space-xl);
+}
+.title--accent {
+  color: var(--off-white);
+  margin-bottom: calc(var(--space-sm) / 2);
 }
 /* Header */
 .news__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 3rem;
 }
 .header__nav {
   position: absolute;
@@ -70,12 +79,12 @@ p {
   /* display: flex; */
   flex-direction: column;
   align-items: flex-end;
-  gap: 6rem;
+  gap: calc(var(--space-xl) * 2);
   top: 0;
   right: 0;
   width: 80vw;
   height: 100vh;
-  padding: 2rem;
+  padding: var(--space-lg);
   background-color: aqua;
 }
 .nav__lists {
@@ -83,9 +92,9 @@ p {
   font-size: 1.2rem;
 }
 .lists__item {
-  margin-bottom: 1.3rem;
+  margin-bottom: var(--space-md);
 }
-/* Main */
+/* Headline*/
 .main__headline {
   width: 100%;
 }
@@ -95,19 +104,35 @@ p {
 }
 .headline__title {
   width: 80%;
-  margin-block: 1rem;
+  margin-block: var(--space-sm);
   color: var(--text-primary);
   font-size: 2.4rem;
 }
 .headline__btn {
-  margin-top: 1.5rem;
-  padding: 1rem 2rem;
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-lg);
   background-color: var(--color-accent);
   color: var(--text-primary);
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 700;
+}
+/* New */
+.main__new {
+  background-color: var(--very-dark-blue);
+  padding: var(--space-md) var(--space-sm);
+}
+.main__article::after {
+  content: '';
+  display: block;
+  height: 1px;
+  margin-block: var(--space-md);
+  background-color: var(--text-primary-variant);
+}
+.main__title {
+  color: var(--soft-orange);
+  margin-bottom: var(--space-md);
 }
 /* footer */
 .attribution {
