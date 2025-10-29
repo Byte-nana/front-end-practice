@@ -44,20 +44,28 @@
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="news__main">
       <section class="main__headline section">
-        <img
-          class="headline__hero"
-          src="./assets/images/image-web-3-mobile.jpg"
-          alt="hero image"
-        />
-        <h1 class="headline__title">The Bright Future of Web 3.0?</h1>
-        <p>
-          We dive into the next evolution of the web that claims to put the
-          power of the platforms back into the hands of the people. But is it
-          really fulfilling its promise?
-        </p>
-        <button class="headline__btn" type="button">Read more</button>
+        <picture>
+          <source
+            media="(min-width: 1024px)"
+            srcset="./assets/images/image-web-3-desktop.jpg"
+          />
+          <img
+            class="headline__hero"
+            src="./assets/images/image-web-3-mobile.jpg"
+            alt="hero image"
+          />
+        </picture>
+        <div class="headline__wrapper">
+          <h1 class="headline__title">The Bright Future of Web 3.0?</h1>
+          <p>
+            We dive into the next evolution of the web that claims to put the
+            power of the platforms back into the hands of the people. But is it
+            really fulfilling its promise?
+          </p>
+          <button class="headline__btn" type="button">Read more</button>
+        </div>
       </section>
       <section class="main__new section">
         <h2 class="new__title">New</h2>
