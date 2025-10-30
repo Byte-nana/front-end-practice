@@ -158,7 +158,6 @@ p {
 /* Popular */
 .popular__article {
   width: 100%;
-  /* height: 130px; */
   display: flex;
   gap: var(--space-md);
   margin-bottom: var(--space-lg);
@@ -230,10 +229,19 @@ p {
     margin-block: var(--space-sm);
   }
 }
-/* To do desktop  */
+/* desktop  */
 @media screen and (min-width: 1024px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
   p {
     font-size: 15px;
+  }
+  .section {
+    margin: 0;
   }
   .header__menubar,
   .nav__close-btn {
@@ -243,6 +251,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: var(--space-xl);
   }
   .header__nav {
     width: fit-content;
@@ -266,25 +275,78 @@ p {
   /* Main */
   .news__main {
     display: grid;
-    grid-template: 3fr 1fr / 3fr 1fr;
+    grid-template: auto auto / 2fr 1fr;
+    column-gap: var(--space-md);
+    row-gap: var(--space-xl);
+    margin-bottom: var(--space-lg);
+  }
+  .main__headline {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space-lg);
   }
   .headline__wrapper {
     display: grid;
     grid-template: auto auto / 0.8fr 1fr;
-    column-gap: var(--space-sm);
-    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+    column-gap: var(--space-md);
   }
   .headline__title {
+    width: 100%;
     grid-row: 1 / -1;
     line-height: 1;
-    margin: 0;
+    margin: auto;
   }
   .headline__btn {
     width: fit-content;
     height: fit-content;
-    margin-top: 0;
+    margin-top: var(--space-md);
+  }
+  /* New */
+  .main__new {
+    padding: var(--space-md) var(--space-sm);
   }
   .main__popular {
     grid-column: span 2;
+  }
+  /* Popular */
+  .main__popular {
+    display: flex;
+    gap: var(--space-sm);
+  }
+  .popular__article {
+    gap: var(--space-sm);
+    margin-bottom: 0;
+  }
+  .popular__title {
+    font-size: 1rem;
+    margin-block: calc(var(--space-sm) / 2);
+  }
+}
+@media screen and (min-width: 1440px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.8rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+  .headline__title {
+    font-size: 4rem;
+  }
+  .main__new {
+    padding: var(--space-lg);
+  }
+  .popular__number {
+    font-size: 2rem;
+  }
+  .popular__title {
+    font-size: 1.3rem;
+  }
+  .popular__content {
+    font-size: 1rem;
   }
 }
