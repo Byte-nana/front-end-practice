@@ -31,8 +31,8 @@ Users can select a rating from 1–5 and, upon clicking “Submit”, view a dyn
 ### Screenshots
 
 **Rating State**  
-![Rating view mobile](/screenshot-mobile.png)
-![Rating view desktop](/screenshot-desktop.png)
+![Rating view mobile](./screenshot-mobile.png)
+![Rating view desktop](./screenshot-desktop.png)
 
 **Thank You State**  
 ![Thank you view](/screenshot-thankyou-state.png)
