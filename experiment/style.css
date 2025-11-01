@@ -1,0 +1,10 @@
+.main {
+  width: 100%;
+  display: grid;
+  grid-template: 1fr 1fr / 2fr 1fr;
+}
+.third {
+  grid-column: span 2;
+  grid-row: 2 / -1;
+  grid-column: 1 / -1;
+}
