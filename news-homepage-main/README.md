@@ -31,10 +31,10 @@ It includes a toggleable mobile navigation menu and adaptive layout that scales 
 ### Screenshots
 
 **Desktop View**  
-![Desktop screenshot](/screenshot-desktop.png)
+![Desktop screenshot](./screenshot-desktop.png)
 
 **Mobile View**  
-![Mobile screenshot](/screenshot-mobile.png)
+![Mobile screenshot](./screenshot-mobile.png)
 
 ### Links
 
