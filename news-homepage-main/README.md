@@ -45,7 +45,14 @@ It includes a toggleable mobile navigation menu and adaptive layout that scales 
 
 - **Loom Demo Video:** [🎥 Watch Demo](https://www.loom.com/share/db22bc536b8a41b5a9cc42bb10613cf0)
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/db22bc536b8a41b5a9cc42bb10613cf0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div>
+    <a href="https://www.loom.com/share/db22bc536b8a41b5a9cc42bb10613cf0">
+      <p>Frontend Mentor | News homepage - 1 November 2025 - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/db22bc536b8a41b5a9cc42bb10613cf0">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/db22bc536b8a41b5a9cc42bb10613cf0-955a78b4200b3450-full-play.gif">
+    </a>
+  </div>
 
 ---
 
