@@ -24,6 +24,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
   background-color: var(--grey-100);
 }
 
@@ -96,6 +97,17 @@ body {
 .btn-arrow {
   width: 24px;
   height: 24px;
+}
+
+.time {
+  font-style: italic;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.number {
+  color: var(--color-accent);
 }
 /*  */
 .attribution {
