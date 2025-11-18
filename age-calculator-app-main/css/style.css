@@ -1,5 +1,6 @@
 :root {
   --color-accent: var(--purple-500);
+  --color-accent-secondary: var(--red-400);
   --color-text: var(--black);
   --color-text-secondary: var(--grey-500);
 
@@ -35,7 +36,7 @@ body {
 
 .calculator {
   width: 90%;
-  max-width: 500px;
+  max-width: 550px;
   padding: 2rem 1.5rem;
   border-radius: 1rem;
   border-bottom-right-radius: 7rem;
@@ -47,7 +48,10 @@ body {
 }
 
 .date-wrapper {
+  display: flex;
+  flex-direction: column;
   width: 33%;
+  gap: 0.5rem;
 }
 
 .date-label {
@@ -57,9 +61,13 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+.label-error {
+  color: var(--color-accent-secondary);
+}
 
 .date-input {
   width: 90%;
+  max-width: 110px;
   height: 3.5rem;
   margin-left: 0.2rem;
   padding: 0.5rem;
@@ -72,6 +80,19 @@ body {
 .date-input:focus {
   border-color: var(--color-accent);
 }
+.input-error {
+  border-color: var(--color-accent-secondary);
+}
+
+.date-error {
+  display: none;
+  /* display: inline-block; */
+  margin-left: 0.5rem;
+  color: var(--color-accent-secondary);
+  font-size: clamp(0.5rem, 2vw, 0.8rem);
+  font-style: italic;
+}
+
 .button-container {
   width: 100%;
   position: relative;
@@ -134,17 +155,24 @@ body {
 @media screen and (min-width: 576px) {
   .date-container {
     padding-right: 8rem;
+    gap: 1rem;
   }
 
   .date-input {
+    width: 100%;
     height: 3rem;
     padding: 0.5rem 1rem;
   }
 
+  .date-error {
+    font-size: 0.6rem;
+  }
+
   .button-container {
     width: 95%;
-    margin-block: 1rem;
+    margin-block: 1.5rem;
   }
+
   .calculate-btn {
     left: 100%;
   }
