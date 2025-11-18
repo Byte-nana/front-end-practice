@@ -1,3 +1,64 @@
+:root {
+  --purple-500: hsl(259, 100%, 65%);
+  --red-400: hsl(0, 100%, 67%);
+
+  --white: hsl(0, 100%, 100%);
+  --grey-100: hsl(0, 0%, 94%);
+  --grey-200: hsl(0, 0%, 86%);
+  --grey-500: hsl(0, 1%, 44%);
+  --black: hsl(0, 0%, 0%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--grey-100);
+}
+
+.calculator {
+  width: 90%;
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  border-bottom-right-radius: 4rem;
+  background-color: var(--white);
+}
+
+.date-container {
+  display: flex;
+}
+
+.date-wrapper {
+  width: 33%;
+}
+
+.date-label {
+  color: var(--grey-500);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.date-input {
+  width: 90%;
+  height: 3.5rem;
+  margin-left: 0.2rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--grey-200);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+/*  */
 .attribution {
   font-size: 11px;
   text-align: center;
