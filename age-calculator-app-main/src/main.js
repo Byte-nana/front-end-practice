@@ -7,9 +7,8 @@ const yearInput = document.querySelector('#year');
 
 const dateLabel = document.querySelectorAll('.date-label');
 const dateInput = document.querySelectorAll('.date-input');
-const emptyMessage = document.querySelectorAll('.date-error');
+const errorMessage = document.querySelectorAll('.date-error');
 
-// empty validation
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -17,9 +16,43 @@ form.addEventListener('submit', (e) => {
   const month = monthInput.value.trim();
   const year = yearInput.value.trim();
 
-  showEmptyAlert(day, 0);
-  showEmptyAlert(month, 1);
-  showEmptyAlert(year, 2);
+  let hasError = false;
+  // empty validation
+  if (day === '') {
+    showErrorAlert(0, 'This field is required');
+    hasError = true;
+  }
+  if (month === '') {
+    showErrorAlert(1, 'This field is required');
+    hasError = true;
+  }
+  if (year === '') {
+    showErrorAlert(2, 'This field is required');
+    hasError = true;
+  }
+  if (hasError) return;
+
+  // inValid date
+  if (!isValidDay(day)) {
+    showErrorAlert(0, 'Must be a valid date');
+    hasError = true;
+  }
+  if (!isValidMonth(month)) {
+    showErrorAlert(1, 'Must be a valid date');
+    hasError = true;
+  }
+  if (!isValidYear(year)) {
+    showErrorAlert(2, 'Must be a valid date');
+    hasError = true;
+  }
+
+  if (hasError) return;
+
+  if (!isRealDate(day, month, year)) {
+    showErrorAlert(0, 'Must be a valid date');
+    showErrorAlert(1, '');
+    showErrorAlert(2, '');
+  }
 });
 
 form.addEventListener('change', (e) => {
@@ -27,10 +60,48 @@ form.addEventListener('change', (e) => {
   const month = monthInput.value.trim();
   const year = yearInput.value.trim();
 
-  removeEmptyAlert(day, 0);
-  removeEmptyAlert(month, 1);
-  removeEmptyAlert(year, 2);
+  if (day !== '' && isValidDay(day)) {
+    removeErrorAlert(0);
+  }
+  if (month !== '' && isValidMonth(month)) {
+    removeErrorAlert(1);
+  }
+  if (year !== '' && isValidYear(year)) {
+    removeErrorAlert(2);
+  }
+
+  if (!isValidDay(day)) {
+    showErrorAlert(0, 'Must be a valid date');
+  }
+  if (!isValidMonth(month)) {
+    showErrorAlert(1, 'Must be a valid date');
+  }
+  if (!isValidYear(year)) {
+    showErrorAlert(2, 'Must be a valid date');
+  }
 });
+
+function showErrorAlert(index, message) {
+  dateLabel[index].classList.add('label-error');
+  dateInput[index].classList.add('input-error');
+  errorMessage[index].innerText = message;
+  errorMessage[index].style.display = 'inline-block';
+}
+
+function removeErrorAlert(index) {
+  dateLabel[index].classList.remove('label-error');
+  dateInput[index].classList.remove('input-error');
+  errorMessage[index].style.display = 'none';
+}
+
+function isRealDate(day, month, year) {
+  const date = new Date(year, month - 1, day);
+  return (
+    date.getFullYear() === Number(year) &&
+    date.getMonth() === month - 1 &&
+    date.getDate() === Number(day)
+  );
+}
 
 function isValidDay(value) {
   return /^\d{1,2}$/.test(value) && Number(value) >= 1 && Number(value) <= 31;
@@ -47,20 +118,4 @@ function isValidYear(value) {
     Number(value) >= 1000 &&
     Number(value) <= currentYear
   );
-}
-
-function showEmptyAlert(date, index) {
-  if (date === '') {
-    dateLabel[index].classList.add('label-error');
-    dateInput[index].classList.add('input-error');
-    emptyMessage[index].style.display = 'inline-block';
-  }
-}
-
-function removeEmptyAlert(date, index) {
-  if (date !== '') {
-    dateLabel[index].classList.remove('label-error');
-    dateInput[index].classList.remove('input-error');
-    emptyMessage[index].style.display = 'none';
-  }
 }

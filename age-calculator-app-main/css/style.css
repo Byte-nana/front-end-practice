@@ -86,9 +86,9 @@ body {
 .input-error:focus {
   border-color: var(--color-accent-secondary);
 }
+
 .date-error {
   display: none;
-  /* display: inline-block; */
   margin-left: 0.5rem;
   color: var(--color-accent-secondary);
   font-size: clamp(0.5rem, 2vw, 0.8rem);
