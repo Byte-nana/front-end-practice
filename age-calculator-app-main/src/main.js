@@ -9,6 +9,10 @@ const dateLabel = document.querySelectorAll('.date-label');
 const dateInput = document.querySelectorAll('.date-input');
 const errorMessage = document.querySelectorAll('.date-error');
 
+const yearText = document.querySelector('.years');
+const monthText = document.querySelector('.months');
+const dayText = document.querySelector('.days');
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -53,6 +57,12 @@ form.addEventListener('submit', (e) => {
     showErrorAlert(1, '');
     showErrorAlert(2, '');
   }
+
+  // show on UI
+  const { years, months, days } = ageCalculator(day, month, year);
+  yearText.innerText = years;
+  monthText.innerText = months;
+  dayText.innerText = days;
 });
 
 form.addEventListener('change', (e) => {
@@ -118,4 +128,30 @@ function isValidYear(value) {
     Number(value) >= 1000 &&
     Number(value) <= currentYear
   );
+}
+
+function ageCalculator(day, month, year) {
+  const today = new Date();
+  const writtenDate = new Date(year, month - 1, day);
+
+  let years = today.getFullYear() - writtenDate.getFullYear();
+  let months = today.getMonth() - writtenDate.getMonth();
+  let days = today.getDate() - writtenDate.getDate();
+
+  if (days < 0) {
+    const previousMonthDays = new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      0
+    ).getDate();
+    days += previousMonthDays;
+    months -= 1;
+  }
+
+  if (months < 0) {
+    months += 12;
+    years -= 1;
+  }
+
+  return { years, months, days };
 }
