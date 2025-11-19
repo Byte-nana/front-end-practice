@@ -1,9 +1,6 @@
 'use strict';
 
 const form = document.querySelector('.calculator__form');
-const dayInput = document.querySelector('#day');
-const monthInput = document.querySelector('#month');
-const yearInput = document.querySelector('#year');
 
 const dateLabel = document.querySelectorAll('.date-label');
 const dateInput = document.querySelectorAll('.date-input');
@@ -15,48 +12,12 @@ const dayText = document.querySelector('.days');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  const [day, month, year] = getDatesValue();
 
-  const day = dayInput.value.trim();
-  const month = monthInput.value.trim();
-  const year = yearInput.value.trim();
-
-  let hasError = false;
-  // empty validation
-  if (day === '') {
-    showErrorAlert(0, 'This field is required');
-    hasError = true;
-  }
-  if (month === '') {
-    showErrorAlert(1, 'This field is required');
-    hasError = true;
-  }
-  if (year === '') {
-    showErrorAlert(2, 'This field is required');
-    hasError = true;
-  }
-  if (hasError) return;
-
-  // inValid date
-  if (!isValidDay(day)) {
-    showErrorAlert(0, 'Must be a valid date');
-    hasError = true;
-  }
-  if (!isValidMonth(month)) {
-    showErrorAlert(1, 'Must be a valid date');
-    hasError = true;
-  }
-  if (!isValidYear(year)) {
-    showErrorAlert(2, 'Must be a valid date');
-    hasError = true;
-  }
-
-  if (hasError) return;
-
-  if (!isRealDate(day, month, year)) {
-    showErrorAlert(0, 'Must be a valid date');
-    showErrorAlert(1, '');
-    showErrorAlert(2, '');
-  }
+  if (!checkEmptyField()) return;
+  if (!checkValidField()) return;
+  if (!checkRealDate(day, month, year)) return;
+  if (!isPastDate(day, month, year)) return;
 
   // show on UI
   const { years, months, days } = ageCalculator(day, month, year);
@@ -66,30 +27,94 @@ form.addEventListener('submit', (e) => {
 });
 
 form.addEventListener('change', (e) => {
-  const day = dayInput.value.trim();
-  const month = monthInput.value.trim();
-  const year = yearInput.value.trim();
+  const fields = [
+    { validate: isValidDay, message: 'Must be a valid day' },
+    { validate: isValidMonth, message: 'Must be a valid month' },
+    { validate: isValidYear, message: 'Must be in the past' },
+  ];
 
-  if (day !== '' && isValidDay(day)) {
-    removeErrorAlert(0);
-  }
-  if (month !== '' && isValidMonth(month)) {
-    removeErrorAlert(1);
-  }
-  if (year !== '' && isValidYear(year)) {
-    removeErrorAlert(2);
-  }
+  dateInput.forEach((date, index) => {
+    const value = date.value.trim();
+    if (!fields[index].validate(value) && value !== '') {
+      showErrorAlert(index, 'Must be a valid date');
+    }
+  });
+  // if (!isValidDay(day) && day !== '') {
+  //   showErrorAlert(0, 'Must be a valid date');
+  // }
+  // if (!isValidMonth(month) && month !== '') {
+  //   showErrorAlert(1, 'Must be a valid date');
+  // }
+  // if (!isValidYear(year) && year !== '') {
+  //   showErrorAlert(2, 'Must be a valid date');
+  // }
 
-  if (!isValidDay(day)) {
-    showErrorAlert(0, 'Must be a valid date');
-  }
-  if (!isValidMonth(month)) {
-    showErrorAlert(1, 'Must be a valid date');
-  }
-  if (!isValidYear(year)) {
-    showErrorAlert(2, 'Must be a valid date');
-  }
+  dateInput.forEach((date, index) => {
+    const value = date.value.trim();
+    if (value !== '' && fields[index].validate(value)) {
+      removeErrorAlert(index);
+    }
+  });
+  // if (day !== '' && isValidDay(day)) {
+  //   removeErrorAlert(0);
+  // }
+  // if (month !== '' && isValidMonth(month)) {
+  //   removeErrorAlert(1);
+  // }
+  // if (year !== '' && isValidYear(year)) {
+  //   removeErrorAlert(2);
+  // }
 });
+
+function getDatesValue() {
+  return [...dateInput].map((d) => d.value.trim());
+}
+
+function checkEmptyField() {
+  let hasError = false;
+
+  dateInput.forEach((input, index) => {
+    if (input.value.trim() === '') {
+      showErrorAlert(index, 'This field is required');
+      hasError = true;
+    }
+  });
+
+  return !hasError;
+}
+
+function checkValidField() {
+  let hasError = false;
+
+  const fields = [
+    { validate: isValidDay, message: 'Must be a valid day' },
+    { validate: isValidMonth, message: 'Must be a valid month' },
+    { validate: isValidYear, message: 'Must be in the past' },
+  ];
+
+  fields.forEach((field, index) => {
+    const value = dateInput[index].value.trim();
+    if (!field.validate(value)) {
+      showErrorAlert(index, field.message);
+      hasError = true;
+    }
+  });
+
+  return !hasError;
+}
+
+function checkRealDate(day, month, year) {
+  let hasError = false;
+
+  if (!isRealDate(day, month, year)) {
+    showErrorAlert(0, 'Must be a valid date');
+    showErrorAlert(1, '');
+    showErrorAlert(2, '');
+    hasError = true;
+  }
+
+  return !hasError;
+}
 
 function showErrorAlert(index, message) {
   dateLabel[index].classList.add('label-error');
@@ -102,15 +127,6 @@ function removeErrorAlert(index) {
   dateLabel[index].classList.remove('label-error');
   dateInput[index].classList.remove('input-error');
   errorMessage[index].style.display = 'none';
-}
-
-function isRealDate(day, month, year) {
-  const date = new Date(year, month - 1, day);
-  return (
-    date.getFullYear() === Number(year) &&
-    date.getMonth() === month - 1 &&
-    date.getDate() === Number(day)
-  );
 }
 
 function isValidDay(value) {
@@ -130,6 +146,28 @@ function isValidYear(value) {
   );
 }
 
+function isRealDate(day, month, year) {
+  const date = new Date(year, month - 1, day);
+  return (
+    date.getFullYear() === Number(year) &&
+    date.getMonth() === month - 1 &&
+    date.getDate() === Number(day)
+  );
+}
+
+function isPastDate(day, month, year) {
+  const today = new Date();
+  const givenDate = new Date(year, month - 1, day);
+
+  let hasError = false;
+  if (givenDate > today) {
+    for (let i = 0; i < dateInput.length; i++) {
+      showErrorAlert(i, 'Must be in the past');
+      hasError = true;
+    }
+  }
+  return !hasError;
+}
 function ageCalculator(day, month, year) {
   const today = new Date();
   const writtenDate = new Date(year, month - 1, day);
