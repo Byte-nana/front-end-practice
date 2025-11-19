@@ -83,7 +83,9 @@ body {
 .input-error {
   border-color: var(--color-accent-secondary);
 }
-
+.input-error:focus {
+  border-color: var(--color-accent-secondary);
+}
 .date-error {
   display: none;
   /* display: inline-block; */
