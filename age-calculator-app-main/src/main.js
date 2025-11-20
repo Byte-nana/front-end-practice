@@ -17,9 +17,8 @@ form.addEventListener('submit', (e) => {
   if (!checkEmptyField()) return;
   if (!checkValidField()) return;
   if (!checkRealDate(day, month, year)) return;
-  if (!isPastDate(day, month, year)) return;
+  if (!checkPastDate(day, month, year)) return;
 
-  // show on UI
   const { years, months, days } = ageCalculator(day, month, year);
   yearText.innerText = years;
   monthText.innerText = months;
@@ -35,35 +34,13 @@ form.addEventListener('change', (e) => {
 
   dateInput.forEach((date, index) => {
     const value = date.value.trim();
-    if (!fields[index].validate(value) && value !== '') {
+    if (value !== '' && !fields[index].validate(value)) {
       showErrorAlert(index, 'Must be a valid date');
     }
-  });
-  // if (!isValidDay(day) && day !== '') {
-  //   showErrorAlert(0, 'Must be a valid date');
-  // }
-  // if (!isValidMonth(month) && month !== '') {
-  //   showErrorAlert(1, 'Must be a valid date');
-  // }
-  // if (!isValidYear(year) && year !== '') {
-  //   showErrorAlert(2, 'Must be a valid date');
-  // }
-
-  dateInput.forEach((date, index) => {
-    const value = date.value.trim();
     if (value !== '' && fields[index].validate(value)) {
       removeErrorAlert(index);
     }
   });
-  // if (day !== '' && isValidDay(day)) {
-  //   removeErrorAlert(0);
-  // }
-  // if (month !== '' && isValidMonth(month)) {
-  //   removeErrorAlert(1);
-  // }
-  // if (year !== '' && isValidYear(year)) {
-  //   removeErrorAlert(2);
-  // }
 });
 
 function getDatesValue() {
@@ -73,8 +50,8 @@ function getDatesValue() {
 function checkEmptyField() {
   let hasError = false;
 
-  dateInput.forEach((input, index) => {
-    if (input.value.trim() === '') {
+  dateInput.forEach((date, index) => {
+    if (date.value.trim() === '') {
       showErrorAlert(index, 'This field is required');
       hasError = true;
     }
@@ -113,6 +90,21 @@ function checkRealDate(day, month, year) {
     hasError = true;
   }
 
+  return !hasError;
+}
+
+function checkPastDate(day, month, year) {
+  let hasError = false;
+
+  const today = new Date();
+  const givenDate = new Date(year, month - 1, day);
+
+  if (givenDate > today) {
+    for (let i = 0; i < dateInput.length; i++) {
+      showErrorAlert(i, 'Must be in the past');
+      hasError = true;
+    }
+  }
   return !hasError;
 }
 
@@ -155,19 +147,6 @@ function isRealDate(day, month, year) {
   );
 }
 
-function isPastDate(day, month, year) {
-  const today = new Date();
-  const givenDate = new Date(year, month - 1, day);
-
-  let hasError = false;
-  if (givenDate > today) {
-    for (let i = 0; i < dateInput.length; i++) {
-      showErrorAlert(i, 'Must be in the past');
-      hasError = true;
-    }
-  }
-  return !hasError;
-}
 function ageCalculator(day, month, year) {
   const today = new Date();
   const writtenDate = new Date(year, month - 1, day);
