@@ -10,34 +10,51 @@
       href="./images/favicon-32x32.png"
     />
     <title>Frontend Mentor | Profile card component</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <section class="profile">
-      <header>
-        <img src="./images/bg-pattern-card.svg" alt="header background" />
+    <section class="card">
+      <header class="header">
+        <img
+          class="header__hero"
+          src="./images/bg-pattern-card.svg"
+          alt="header background"
+        />
       </header>
-      <main>
-        <img src="./images/image-victor.jpg" alt="avatar" />
-        <h1>
+      <main class="main">
+        <div class="avatar-wrapper">
+          <img
+            class="main__avatar"
+            src="./images/image-victor.jpg"
+            alt="avatar"
+          />
+        </div>
+        <h1 class="main__name">
           Victor Crest
-          <span>26</span>
+          <span class="main__age">26</span>
         </h1>
-        <p>London</p>
-        <article></article>
+        <p class="main__location">London</p>
       </main>
-      <footer>
-        <article>
-          <p>80K</p>
-          <p>Followers</p>
+      <footer class="footer">
+        <article class="footer__texts">
+          <p class="texts__number">80K</p>
+          <p class="texts__category">Followers</p>
         </article>
-        <article>
-          <p>803K</p>
-          <p>Likes</p>
+        <article class="footer__texts">
+          <p class="texts__number">803K</p>
+          <p class="texts__category">Likes</p>
         </article>
-        <article>
-          <p>1.4K</p>
-          <p>Photos</p>
+        <article class="footer__texts">
+          <p class="texts__number">1.4K</p>
+          <p class="texts__category">Photos</p>
         </article>
       </footer>
     </section>
